@@ -26,14 +26,14 @@ class Hat:
 
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
-  aux_hat = hat.contents.copy()
+  
   aux_dic = {}
   aux_cont = 0
   
   for i in range(num_experiments):
     aux  = 0
-    hat.contents = aux_hat.copy()
-    aux_balls_drawn = hat.draw(num_balls_drawn)
+    copy_hat = copy.deepcopy(hat)
+    aux_balls_drawn = copy_hat.draw(num_balls_drawn)
     
     for k, v in expected_balls.items():
       if aux_balls_drawn.count(k) >= v:
