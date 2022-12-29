@@ -8,7 +8,6 @@ class Hat:
     for key, value in kwargs.items():
       for i in range(int(value)):
         self.contents.append(key)
-    #print(self.contents)
 
   def draw(self, balls_to_draw):
     #contents
@@ -16,8 +15,6 @@ class Hat:
     if balls_to_draw > len(self.contents):
       return self.contents
     else:
-      # k = number of items to select
-      #list_draw = random.choices(self.contents, k=balls_to_draw)
       for i in range(balls_to_draw):
         aux_index = random.randrange(len(self.contents))
         list_draw.append(self.contents[aux_index])
